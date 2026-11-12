@@ -1,0 +1,60 @@
+{
+  "name": "@ruaibeite/dsh-provenance",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Line-level provenance and a decision ledger for agent edits: which session, model and tool wrote each change, browsable by workspace and file, with Markdown/JSON export. Read-only and local-only.",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "assets/icon-180.png",
+    "LICENSE",
+    "README.md",
+    "README.zh.md",
+    "test/"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "provenance",
+    "audit",
+    "decision-record",
+    "adr",
+    "traceability"
+  ],
+  "scripts": {
+    "test": "node test/host.mjs && node test/render.mjs"
+  },
+  "author": "ruaibeite",
+  "homepage": "https://github.com/ruaibeite/dsh-provenance#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruaibeite/dsh-provenance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ruaibeite/dsh-provenance/issues"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta.title": "溯源",
+  "meta.description": "Agent 代码改动的行级溯源与决策账本：哪次会话、哪个模型、哪个工具写了什么；可按工作区/文件浏览并导出 Markdown/JSON。",
+  "nav": "溯源",
+  "title": "溯源"
+}

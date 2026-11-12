@@ -1,0 +1,6 @@
+{
+  "meta.title": "Provenance",
+  "meta.description": "Line-level provenance and a decision ledger for agent edits: which session, model and tool wrote each change, with Markdown/JSON export.",
+  "nav": "Provenance",
+  "title": "Provenance"
+}
