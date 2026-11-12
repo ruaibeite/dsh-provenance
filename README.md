@@ -2,6 +2,14 @@
 
 **Line-level provenance and a decision ledger for agent edits.** Answer "who wrote this line — which session, which model, which tool?" for every file the agent changed on this machine, then pin the important changes as decisions and export an audit trail as Markdown or JSON.
 
+## Screenshots
+
+![Provenance ledger in light theme: workspaces, files, record timeline and decision ledger](assets/screenshot-provenance-light.png)
+![Pinned decisions with notes and Markdown/JSON export](assets/screenshot-provenance-ledger.png)
+![Provenance ledger in dark theme](assets/screenshot-provenance-dark.png)
+
+> Screenshots are taken from a demo profile seeded with synthetic sessions; no user data is shown.
+
 ## Install
 
 - **DSH marketplace**: install `@ruaibeite/dsh-provenance` from the community plugin catalog (requires the `dsh-plugin` topic).

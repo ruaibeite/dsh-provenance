@@ -17,6 +17,8 @@
     "locale/*.json",
     "icon.svg",
     "assets/icon-180.png",
+    "assets/screenshot-*.png",
+    "screenshots.json",
     "LICENSE",
     "README.md",
     "README.zh.md",
@@ -56,5 +58,11 @@
   },
   "bugs": {
     "url": "https://github.com/ruaibeite/dsh-provenance/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

@@ -2,6 +2,14 @@
 
 **Agent 代码改动的行级溯源 + 决策账本。** 回答「这行代码是谁写的——哪次会话、哪个模型、哪个工具」，并把关键改动固定为决策，导出 Markdown / JSON 审计记录。
 
+## 截图
+
+![浅色主题下的代码溯源：工作区、文件、记录时间线与决策账本](assets/screenshot-provenance-light.png)
+![固定为决策的条目（含备注）与 Markdown/JSON 导出](assets/screenshot-provenance-ledger.png)
+![深色主题下的代码溯源页面](assets/screenshot-provenance-dark.png)
+
+> 截图来自填充了合成会话的演示 profile，不包含任何用户数据。
+
 ## 安装
 
 - **DSH 市场**：从社区插件目录安装 `@ruaibeite/dsh-provenance`（仓库需带 `dsh-plugin` topic）。
