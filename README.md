@@ -31,6 +31,8 @@ A single Settings page with a master-detail browser:
 4. **Decision ledger** — your own pinned entries with an optional note ("why was this change made?"); remove them at any time.
 5. **Export** — Markdown (human-readable audit) or JSON (machine-readable), downloaded straight from the page.
 
+The three panes adapt to the narrow Settings dialog: the workspace and file lists share the first row, the record timeline spans the full width, and long snippets wrap inside their card instead of being clipped.
+
 It also normalizes relative paths against the session's working directory and keeps records that point outside it (with no relative path).
 
 ## How it works
