@@ -360,7 +360,7 @@ export function extractRecords(events, header, options = {}) {
       skip()
       continue
     }
-    const rawPath = pickString(args, ['path'])
+    const rawPath = pickString(args, ['path', 'file_path', 'filePath', 'file'])
     if (rawPath === null) {
       skip()
       continue
