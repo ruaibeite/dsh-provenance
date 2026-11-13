@@ -801,6 +801,23 @@ test('resolveDshHome prefers DSH_HOME and falls back to ~/.dsh', () => {
   assert.equal(resolveDshHome({ DSH_HOME: '  ' }, '/home/u'), path.join('/home/u', '.dsh'))
 })
 
+test('extractRecords accepts the built-in write/edit arguments (file_path)', () => {
+  const header = { id: 'session-real', createdAt: 1000, cwd: '/tmp/ws', delegationDepth: 0 }
+  const events = [
+    { type: 'assistant/message', seq: 1, time: 1000, data: { message: { source: { kind: 'model', provider: 'deepseek', model: 'deepseek-chat' } } } },
+    { type: 'tool/call', seq: 2, time: 2000, data: { name: 'write', callId: 'c1', arguments: JSON.stringify({ file_path: '/tmp/ws/src/a.ts', content: 'a\nb\n' }) } },
+    { type: 'tool/result', seq: 3, time: 2001, data: { callId: 'c1', ok: true } },
+    { type: 'tool/call', seq: 4, time: 3000, data: { name: 'edit', callId: 'c2', arguments: JSON.stringify({ file_path: '/tmp/ws/src/a.ts', old_string: 'a', new_string: 'a\nc' }) } },
+    { type: 'tool/result', seq: 5, time: 3001, data: { callId: 'c2', ok: true } },
+  ]
+  const result = extractRecords(events, header, { sessionId: 'session-real' })
+  assert.equal(result.records.length, 2)
+  assert.equal(result.records[0].relPath, 'src/a.ts')
+  assert.equal(result.records[0].tool, 'write')
+  assert.equal(result.records[1].tool, 'edit')
+  assert.equal(result.records[1].afterHash, hash16('a\nc'))
+})
+
 // ---------------------------------------------------------------------------
 // Summary + cleanup
 // ---------------------------------------------------------------------------
